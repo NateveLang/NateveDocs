@@ -94,4 +94,44 @@ Returns a ProgressBar as a text, with a certain length and percent of progress.
 |████████        |      50%
 ```
 
+## ProgressBar.display
+
+Display a progress bar in the console, with a certain length and percent of progress, waiting a certain number of milliseconds.
+You can also set the `printPercent` parameter to `True` to print the percent of progress.
+
+```python
+>>> p_bar = ProgressBar()
+>>> p_bar.display(0.75, 16, 1000, printPercent = False)
+|████████████    |
+```
+
+## ProgressBar.iterate
+iterate(self, function = clearConsole, printPercent = False):
+For each percent of progress, display a progress bar in the console, with length 32 and a sleeping time of 24 milliseconds.
+You can choose a function to execute at each iteration.
+
+```python
+p_bar = ProgressBar()
+
+def my_function():
+    print("Hello world!")
+    clearConsole()
+
+p_bar.iterate(my_function, printPercent = True)
+```
+
+Iteration 25:
+
+```bash
+Hello world!
+|████████                        |      100%
+```
+
+Last iteration:
+
+```bash
+Hello world!
+|████████████████████████████████|      100%
+```
+
 ~ this will not be shown ~

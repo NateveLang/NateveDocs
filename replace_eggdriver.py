@@ -35,7 +35,7 @@ for i in range(len(lines)):
     else:
             last_feature_description += line
 
-features.sort(key = lambda x: x[0]) # sort features by name
+features.sort(key = lambda x: x[0].lower()) # sort features by name
 
 for i in range(len(features)):
     replace_eggdriver_standard_library_here += f"## {i + 1}. " + features[i][0] + "\n\n"
