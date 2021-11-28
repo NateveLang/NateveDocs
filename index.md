@@ -720,16 +720,16 @@ In this section we will see how to use the Eggdriver Standard Library features.
 Clear the console.
 
 ```python
-clearConsole() # clear the console
+clearConsole() ~ clear the console ~
 ```
 
 ## 2. display
 
 Display a text in the console each certain number of milliseconds, while a condition is true.
-The default condition is `True`.	
+The default condition is `true`.	
 
 ```python
-display("Hello world!", 1000, 1 > 0) # display the text "Hello world!" for 1 second
+display("Hello world!", 1000, 1 > 0) ~ display the text "Hello world!" for 1 second ~
 ```
 
 Each 1 second:
@@ -749,10 +749,15 @@ e =  2.7182818284590452353602874713526624977572470936999595749669676277240766303
 Get an input, with a tag.
 
 ```python
->>> input_string = get("my-console-application")
+input_string = get("my-console-application")
+print(input_string)
+```
+
+Input/Output:
+
+```bash
 $my-console-application> Hi
->>> input_string
-'Hi'
+Hi
 ```
 
 ## 5. inf
@@ -766,7 +771,11 @@ inf = 10 ** 11
 The identity function.
 
 ```python
->>> itself(10)
+result = itself(10)
+print(result)
+```
+
+```bash
 10
 ```
 
@@ -775,11 +784,16 @@ The identity function.
 Print content in white and get an input with a tag. The default tag is 'egg'.
 
 ```python
->>> input_string = pg('Hello world!', "my-console-application")
+input_string = pg('Hello world!', "my-console-application")
+print(input_string)
+```
+
+Input/Output:
+
+```bash
 Hello world!
 $my-console-application> Hi
->>> input_string
-'Hi'
+Hi
 ```
 
 ## 8. pi
@@ -793,8 +807,13 @@ pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062
 A progress bar pip-like for console implementations.
 
 ```python
->>> bar = ProgressBar()
->>> bar.iterate(printPercent = True)
+bar = ProgressBar()
+bar.iterate(printPercent = True)
+```
+
+Last iteration:
+
+```bash
 |████████████████████████████████|      100%
 ```
 
@@ -803,9 +822,12 @@ A progress bar pip-like for console implementations.
 Returns a ProgressBar as a text, with a certain length and percent of progress.
 
 ```python
->>> p_bar = ProgressBar()
->>> text = p_bar.bar(0.5, 16)
->>> text
+p_bar = ProgressBar()
+text = p_bar.bar(0.5, 16)
+print(text)
+```
+
+```bash
 |████████        |      50%
 ```
 
@@ -815,8 +837,11 @@ Display a progress bar in the console, with a certain length and percent of prog
 You can also set the `printPercent` parameter to `True` to print the percent of progress.
 
 ```python
->>> p_bar = ProgressBar()
->>> p_bar.display(0.75, 16, 1000, printPercent = False)
+p_bar = ProgressBar()
+p_bar.display(0.75, 16, 1000, printPercent = False)
+```
+
+```bash
 |████████████    |
 ```
 
@@ -828,9 +853,10 @@ You can choose a function to execute at each iteration.
 ```python
 p_bar = ProgressBar()
 
-def my_function():
+def my_function() {
     print("Hello world!")
     clearConsole()
+}
 
 p_bar.iterate(my_function, printPercent = True)
 ```
@@ -839,7 +865,7 @@ Iteration 25:
 
 ```bash
 Hello world!
-|████████                        |      100%
+|████████                        |      25%
 ```
 
 Last iteration:
@@ -879,7 +905,7 @@ series_inf = 500
 Wait a certain number of milliseconds.
 
 ```python
-sleep(1000) # sleep for 1 second
+sleep(1000) ~ sleep for 1 second ~
 ```
 
 ## 14. sysCommand
@@ -887,7 +913,7 @@ sleep(1000) # sleep for 1 second
 Execute a python command. (Currently only for Windows).
 
 ```python
-sysCommand("-m pip install --upgrade pip") # execute the command "py -m pip install --upgrade pip"
+sysCommand("-m pip install --upgrade pip") ~ execute the command "py -m pip install --upgrade pip" ~
 ```
 
 # Templates Standard Library

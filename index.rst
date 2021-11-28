@@ -779,17 +779,17 @@ Clear the console.
 
 .. code-block:: python
 
-   clearConsole() # clear the console
+   clearConsole() ~ clear the console ~
 
 2. display
 ----------
 
 Display a text in the console each certain number of milliseconds, while a condition is true.
-The default condition is ``True``.    
+The default condition is ``true``.    
 
 .. code-block:: python
 
-   display("Hello world!", 1000, 1 > 0) # display the text "Hello world!" for 1 second
+   display("Hello world!", 1000, 1 > 0) ~ display the text "Hello world!" for 1 second ~
 
 Each 1 second:
 
@@ -811,10 +811,15 @@ Get an input, with a tag.
 
 .. code-block:: python
 
-   >>> input_string = get("my-console-application")
+   input_string = get("my-console-application")
+   print(input_string)
+
+Input/Output:
+
+.. code-block:: bash
+
    $my-console-application> Hi
-   >>> input_string
-   'Hi'
+   Hi
 
 5. inf
 ------
@@ -830,7 +835,11 @@ The identity function.
 
 .. code-block:: python
 
-   >>> itself(10)
+   result = itself(10)
+   print(result)
+
+.. code-block:: bash
+
    10
 
 7. pg
@@ -840,11 +849,16 @@ Print content in white and get an input with a tag. The default tag is 'egg'.
 
 .. code-block:: python
 
-   >>> input_string = pg('Hello world!', "my-console-application")
+   input_string = pg('Hello world!', "my-console-application")
+   print(input_string)
+
+Input/Output:
+
+.. code-block:: bash
+
    Hello world!
    $my-console-application> Hi
-   >>> input_string
-   'Hi'
+   Hi
 
 8. pi
 -----
@@ -860,8 +874,13 @@ A progress bar pip-like for console implementations.
 
 .. code-block:: python
 
-   >>> bar = ProgressBar()
-   >>> bar.iterate(printPercent = True)
+   bar = ProgressBar()
+   bar.iterate(printPercent = True)
+
+Last iteration:
+
+.. code-block:: bash
+
    |████████████████████████████████|      100%
 
 ProgressBar.bar
@@ -871,9 +890,12 @@ Returns a ProgressBar as a text, with a certain length and percent of progress.
 
 .. code-block:: python
 
-   >>> p_bar = ProgressBar()
-   >>> text = p_bar.bar(0.5, 16)
-   >>> text
+   p_bar = ProgressBar()
+   text = p_bar.bar(0.5, 16)
+   print(text)
+
+.. code-block:: bash
+
    |████████        |      50%
 
 ProgressBar.display
@@ -884,8 +906,11 @@ You can also set the ``printPercent`` parameter to ``True`` to print the percent
 
 .. code-block:: python
 
-   >>> p_bar = ProgressBar()
-   >>> p_bar.display(0.75, 16, 1000, printPercent = False)
+   p_bar = ProgressBar()
+   p_bar.display(0.75, 16, 1000, printPercent = False)
+
+.. code-block:: bash
+
    |████████████    |
 
 ProgressBar.iterate
@@ -899,9 +924,10 @@ You can choose a function to execute at each iteration.
 
    p_bar = ProgressBar()
 
-   def my_function():
+   def my_function() {
        print("Hello world!")
        clearConsole()
+   }
 
    p_bar.iterate(my_function, printPercent = True)
 
@@ -910,7 +936,7 @@ Iteration 25:
 .. code-block:: bash
 
    Hello world!
-   |████████                        |      100%
+   |████████                        |      25%
 
 Last iteration:
 
@@ -954,7 +980,7 @@ Wait a certain number of milliseconds.
 
 .. code-block:: python
 
-   sleep(1000) # sleep for 1 second
+   sleep(1000) ~ sleep for 1 second ~
 
 14. sysCommand
 --------------
@@ -963,7 +989,7 @@ Execute a python command. (Currently only for Windows).
 
 .. code-block:: python
 
-   sysCommand("-m pip install --upgrade pip") # execute the command "py -m pip install --upgrade pip"
+   sysCommand("-m pip install --upgrade pip") ~ execute the command "py -m pip install --upgrade pip" ~
 
 Templates Standard Library
 ==========================
