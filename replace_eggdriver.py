@@ -19,18 +19,21 @@ for i in range(len(lines)):
 
     elif len(line) > 0:
 
-        if line[0] == "#" or EOF:
+        if line[0:2] == "# " or EOF:
             features.append((last_feature_name, last_feature_description.strip()))
 
-        if line[0] == "#":
+        if line[0:2] == "# ":
             last_feature_name = line.strip("#").strip()
             last_feature_description = ""
         
+        elif line[0:2] == "##":
+            last_feature_description += "#" + line
+
         elif line[0] != "~":
-            last_feature_description += line.strip()
+            last_feature_description += line
 
     else:
-            last_feature_description += line.strip()
+            last_feature_description += line
 
 features.sort(key = lambda x: x[0]) # sort features by name
 

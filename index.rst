@@ -772,40 +772,110 @@ Most of Nateve functions, variables and classes are implemented in the **Eggdriv
 
 In this section we will see how to use the Eggdriver Standard Library features.
 
-1. clearConsole
+1. ProgressBar
+--------------
+
+A progress bar pip-like for console implementations.
+
+.. code-block:: python
+
+   >>> bar = ProgressBar()
+   >>> bar.iterate(printPercent = True)
+   |████████████████████████████████|      100%
+
+ProgressBar.bar
+^^^^^^^^^^^^^^^
+
+Returns a ProgressBar as a text, with a certain length and percent of progress.
+
+.. code-block:: python
+
+   >>> p_bar = ProgressBar()
+   >>> text = p_bar.bar(0.5, 16)
+   >>> text
+   |████████        |      50%
+
+2. clearConsole
 ---------------
 
 Clear the console.
 
-2. display
+.. code-block:: python
+
+   clearConsole() # clear the console
+
+3. display
 ----------
 
-Display a text in the console each certain number of milliseconds.
+Display a text in the console each certain number of milliseconds, while a condition is true.
+The default condition is ``True``.    
 
-3. get
+.. code-block:: python
+
+   display("Hello world!", 1000, 1 > 0) # display the text "Hello world!" for 1 second
+
+Each 1 second:
+
+.. code-block:: bash
+
+   Hello world!
+
+4. get
 ------
 
-Get an input.
+Get an input, with a tag.
 
-4. pg
+.. code-block:: python
+
+   >>> input_string = get("my-console-application")
+   $my-console-application> Hi
+   >>> input_string
+   'Hi'
+
+5. pg
 -----
 
-Print content in white and get an input.
+Print content in white and get an input with a tag. The default tag is 'egg'.
 
-5. put
+.. code-block:: python
+
+   >>> input_string = pg('Hello world!', "my-console-application")
+   Hello world!
+   $my-console-application> Hi
+   >>> input_string
+   'Hi'
+
+6. put
 ------
 
-Print content in white.
+Print content in a certain eggdriver color. The default color is white. You can set the color to "" to reset the color.
+You can also set an ending string using the ``end`` parameter.
 
-6. sleep
+.. code-block:: python
+
+   put("Hi", "", ";")
+
+.. code-block:: bash
+
+   Hi;
+
+7. sleep
 --------
 
 Wait a certain number of milliseconds.
 
-7. sysCommand
+.. code-block:: python
+
+   sleep(1000) # sleep for 1 second
+
+8. sysCommand
 -------------
 
-Execute a system command. (Currently only for Windows).
+Execute a python command. (Currently only for Windows).
+
+.. code-block:: python
+
+   sysCommand("-m pip install --upgrade pip") # execute the command "py -m pip install --upgrade pip"
 
 Templates Standard Library
 ==========================

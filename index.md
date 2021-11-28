@@ -715,32 +715,100 @@ Most of Nateve functions, variables and classes are implemented in the **Eggdriv
 
 In this section we will see how to use the Eggdriver Standard Library features.
 
-## 1. clearConsole
+## 1. ProgressBar
+
+A progress bar pip-like for console implementations.
+
+```python
+>>> bar = ProgressBar()
+>>> bar.iterate(printPercent = True)
+|████████████████████████████████|      100%
+```
+
+### ProgressBar.bar
+
+Returns a ProgressBar as a text, with a certain length and percent of progress.
+
+```python
+>>> p_bar = ProgressBar()
+>>> text = p_bar.bar(0.5, 16)
+>>> text
+|████████        |      50%
+```
+
+## 2. clearConsole
 
 Clear the console.
 
-## 2. display
+```python
+clearConsole() # clear the console
+```
 
-Display a text in the console each certain number of milliseconds.
+## 3. display
 
-## 3. get
+Display a text in the console each certain number of milliseconds, while a condition is true.
+The default condition is `True`.	
 
-Get an input.
+```python
+display("Hello world!", 1000, 1 > 0) # display the text "Hello world!" for 1 second
+```
 
-## 4. pg
+Each 1 second:
 
-Print content in white and get an input.
+```bash
+Hello world!
+```
 
-## 5. put
+## 4. get
 
-Print content in white.
+Get an input, with a tag.
 
-## 6. sleep
+```python
+>>> input_string = get("my-console-application")
+$my-console-application> Hi
+>>> input_string
+'Hi'
+```
+
+## 5. pg
+
+Print content in white and get an input with a tag. The default tag is 'egg'.
+
+```python
+>>> input_string = pg('Hello world!', "my-console-application")
+Hello world!
+$my-console-application> Hi
+>>> input_string
+'Hi'
+```
+
+## 6. put
+
+Print content in a certain eggdriver color. The default color is white. You can set the color to "" to reset the color.
+You can also set an ending string using the `end` parameter.
+
+```python
+put("Hi", "", ";")
+```
+
+```bash
+Hi;
+```
+
+## 7. sleep
 
 Wait a certain number of milliseconds.
 
-## 7. sysCommand
+```python
+sleep(1000) # sleep for 1 second
+```
 
-Execute a system command. (Currently only for Windows).
+## 8. sysCommand
+
+Execute a python command. (Currently only for Windows).
+
+```python
+sysCommand("-m pip install --upgrade pip") # execute the command "py -m pip install --upgrade pip"
+```
 
 # Templates Standard Library
