@@ -1,3 +1,3 @@
 .. toctree::
 
-   myfile.md
+   README.md
