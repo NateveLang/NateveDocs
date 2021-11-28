@@ -772,7 +772,88 @@ Most of Nateve functions, variables and classes are implemented in the **Eggdriv
 
 In this section we will see how to use the Eggdriver Standard Library features.
 
-1. ProgressBar
+1. clearConsole
+---------------
+
+Clear the console.
+
+.. code-block:: python
+
+   clearConsole() # clear the console
+
+2. display
+----------
+
+Display a text in the console each certain number of milliseconds, while a condition is true.
+The default condition is ``True``.    
+
+.. code-block:: python
+
+   display("Hello world!", 1000, 1 > 0) # display the text "Hello world!" for 1 second
+
+Each 1 second:
+
+.. code-block:: bash
+
+   Hello world!
+
+3. e
+----
+
+The Euler number with 73 digits of precision.
+
+e =  2.7182818284590452353602874713526624977572470936999595749669676277240766303
+
+4. get
+------
+
+Get an input, with a tag.
+
+.. code-block:: python
+
+   >>> input_string = get("my-console-application")
+   $my-console-application> Hi
+   >>> input_string
+   'Hi'
+
+5. inf
+------
+
+The computable infinity used for limits calculation.
+
+inf = 10 ** 11
+
+6. itself
+---------
+
+The identity function.
+
+.. code-block:: python
+
+   >>> itself(10)
+   10
+
+7. pg
+-----
+
+Print content in white and get an input with a tag. The default tag is 'egg'.
+
+.. code-block:: python
+
+   >>> input_string = pg('Hello world!', "my-console-application")
+   Hello world!
+   $my-console-application> Hi
+   >>> input_string
+   'Hi'
+
+8. pi
+-----
+
+The number pi with 73 digits of precision.
+
+pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062
+
+9. ProgressBar
 --------------
 
 A progress bar pip-like for console implementations.
@@ -795,58 +876,51 @@ Returns a ProgressBar as a text, with a certain length and percent of progress.
    >>> text
    |████████        |      50%
 
-2. clearConsole
----------------
+ProgressBar.display
+^^^^^^^^^^^^^^^^^^^
 
-Clear the console.
-
-.. code-block:: python
-
-   clearConsole() # clear the console
-
-3. display
-----------
-
-Display a text in the console each certain number of milliseconds, while a condition is true.
-The default condition is ``True``.    
+Display a progress bar in the console, with a certain length and percent of progress, waiting a certain number of milliseconds.
+You can also set the ``printPercent`` parameter to ``True`` to print the percent of progress.
 
 .. code-block:: python
 
-   display("Hello world!", 1000, 1 > 0) # display the text "Hello world!" for 1 second
+   >>> p_bar = ProgressBar()
+   >>> p_bar.display(0.75, 16, 1000, printPercent = False)
+   |████████████    |
 
-Each 1 second:
+ProgressBar.iterate
+^^^^^^^^^^^^^^^^^^^
+
+iterate(self, function = clearConsole, printPercent = False):
+For each percent of progress, display a progress bar in the console, with length 32 and a sleeping time of 24 milliseconds.
+You can choose a function to execute at each iteration.
+
+.. code-block:: python
+
+   p_bar = ProgressBar()
+
+   def my_function():
+       print("Hello world!")
+       clearConsole()
+
+   p_bar.iterate(my_function, printPercent = True)
+
+Iteration 25:
 
 .. code-block:: bash
 
    Hello world!
+   |████████                        |      100%
 
-4. get
-------
+Last iteration:
 
-Get an input, with a tag.
+.. code-block:: bash
 
-.. code-block:: python
-
-   >>> input_string = get("my-console-application")
-   $my-console-application> Hi
-   >>> input_string
-   'Hi'
-
-5. pg
------
-
-Print content in white and get an input with a tag. The default tag is 'egg'.
-
-.. code-block:: python
-
-   >>> input_string = pg('Hello world!', "my-console-application")
    Hello world!
-   $my-console-application> Hi
-   >>> input_string
-   'Hi'
+   |████████████████████████████████|      100%
 
-6. put
-------
+10. put
+-------
 
 Print content in a certain eggdriver color. The default color is white. You can set the color to "" to reset the color.
 You can also set an ending string using the ``end`` parameter.
@@ -859,8 +933,22 @@ You can also set an ending string using the ``end`` parameter.
 
    Hi;
 
-7. sleep
---------
+11. R
+-----
+
+The Reals numbers set.
+
+R = [-inf, inf]
+
+12. series_inf
+--------------
+
+The computable infinity used for series calculation.
+
+series_inf = 500
+
+13. sleep
+---------
 
 Wait a certain number of milliseconds.
 
@@ -868,8 +956,8 @@ Wait a certain number of milliseconds.
 
    sleep(1000) # sleep for 1 second
 
-8. sysCommand
--------------
+14. sysCommand
+--------------
 
 Execute a python command. (Currently only for Windows).
 
