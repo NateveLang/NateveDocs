@@ -1,0 +1,29 @@
+# pg
+
+Print content in white and get an input.
+
+# get
+
+Get an input. 
+
+# put
+
+Print content in white.
+
+# sleep
+
+Wait a certain number of milliseconds.
+
+# clearConsole
+
+Clear the console.
+
+# display
+
+Display a text in the console each certain number of milliseconds.
+
+# sysCommand
+
+Execute a system command. (Currently only for Windows).
+
+~ this will not be shown ~

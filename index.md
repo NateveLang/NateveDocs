@@ -715,6 +715,32 @@ Most of Nateve functions, variables and classes are implemented in the **Eggdriv
 
 In this section we will see how to use the Eggdriver Standard Library features.
 
-replace_eggdriver_standard_library_here
+## 1. clearConsole
+
+Clear the console.
+
+## 2. display
+
+Display a text in the console each certain number of milliseconds.
+
+## 3. get
+
+Get an input.
+
+## 4. pg
+
+Print content in white and get an input.
+
+## 5. put
+
+Print content in white.
+
+## 6. sleep
+
+Wait a certain number of milliseconds.
+
+## 7. sysCommand
+
+Execute a system command. (Currently only for Windows).
 
 # Templates Standard Library

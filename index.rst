@@ -1,6 +1,6 @@
 
-Nateve
-======
+Introducing Nateve
+==================
 
 Nateve is a new general domain programming language open source inspired by languages like Python, C++, JavaScript, and Wolfram Mathematica.
 
@@ -77,7 +77,7 @@ In this tutorial, we will learn how to use Nateve step by step.
 Step 0: Learn the basics
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-We recommend read this README.md file.
+We recommend read the README.md file.
 
 Step 1: Installation
 ^^^^^^^^^^^^^^^^^^^^
@@ -744,3 +744,68 @@ There are multiply ways to contribute, since sharing this project, improving the
 
 * 
   **Developing new features**\ : If you want to develop new features or making improvements to the project, you can do a fork to the ``dev`` branch (here are the ultimate develops) working there, and later do a `\ ``pull request`` <https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`_ to ``dev`` branch in order to update **Nateve**.
+
+NQS inside
+==========
+
+NQS: Natural Quantum Script. A special domain programming language that aims to simplify the first contact with quantum computing
+---------------------------------------------------------------------------------------------------------------------------------
+
+Natural Quantum Script is a special domain programming language that aims to simplify the first contact with quantum computing for people who have prior knowledge in quantum circuits, but not in quantum software development.
+
+Scripts written in NQS seek to visually resemble quantum circuits as much as possible. For example:
+
+.. code-block:: bash
+
+   q0 q1
+   X
+   H
+   .--- X
+   c1
+
+NQS is based on Qiskit, but seeks to go mainstream in the future. This is an OS project whose initial goal was to make it easier to write basic scripts in Qiskit and to bridge the gap for people who don't dare to delve into quantum computing.
+
+Eggdriver Standard Library
+==========================
+
+Most of Nateve functions, variables and classes are implemented in the **Eggdriver Standard Library**.
+
+In this section we will see how to use the Eggdriver Standard Library features.
+
+1. clearConsole
+---------------
+
+Clear the console.
+
+2. display
+----------
+
+Display a text in the console each certain number of milliseconds.
+
+3. get
+------
+
+Get an input.
+
+4. pg
+-----
+
+Print content in white and get an input.
+
+5. put
+------
+
+Print content in white.
+
+6. sleep
+--------
+
+Wait a certain number of milliseconds.
+
+7. sysCommand
+-------------
+
+Execute a system command. (Currently only for Windows).
+
+Templates Standard Library
+==========================
