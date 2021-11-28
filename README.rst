@@ -1,6 +1,6 @@
 
 Nateve
-------
+======
 
 Nateve is a new general domain programming language open source inspired by languages like Python, C++, JavaScript, and Wolfram Mathematica.
 
@@ -89,7 +89,7 @@ Clone the repo
 
 .. code-block:: bash
 
-   $> git clone ...
+   $> git clone https://github.com/NateveLang/Adam.git
 
 Add to path
 ~~~~~~~~~~~
@@ -398,6 +398,9 @@ You also can use your own templates. Just create a file with the name of the tem
 Some Examples
 -------------
 
+Example 1
+^^^^^^^^^
+
 .. code-block:: python
 
    ~Nateve Example 1~
@@ -426,6 +429,9 @@ Output:
    1
    matplotlib successfully installed
    xd
+
+Example 2
+^^^^^^^^^
 
 .. code-block:: python
 
@@ -468,6 +474,9 @@ Output:
    | 1 1 2 3 4 |
    | 1 1 2 3 4 |
    [ 1 2 3 4 5 6 30 0 9 ]
+
+Example 3
+^^^^^^^^^
 
 .. code-block:: python
 
@@ -513,6 +522,9 @@ Output:
    | 1 1 2 3 4 |
    [ 1 2 3 4 5 6 30 0 9 ]
 
+Example 4
+^^^^^^^^^
+
 .. code-block:: python
 
    ~Nateve Example 4~
@@ -551,6 +563,9 @@ Output:
    Try Nateve!
    Bonjour Nateve!
 
+Example 5
+^^^^^^^^^
+
 .. code-block:: python
 
    ~Nateve Example 5~
@@ -569,6 +584,9 @@ Output:
    Try Nateve!
    Bonjour Nateve!
    Nateve example 5
+
+Example 6
+^^^^^^^^^
 
 .. code-block:: python
 
