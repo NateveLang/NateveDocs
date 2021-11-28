@@ -715,7 +715,20 @@ Most of Nateve functions, variables and classes are implemented in the **Eggdriv
 
 In this section we will see how to use the Eggdriver Standard Library features.
 
-## 1. clearConsole
+## 1. ceil
+
+Return the ceil function to a number.
+
+```python
+result = ceil(pi)
+print(result)
+```
+
+```txt
+4
+```
+
+## 2. clearConsole
 
 Clear the console.
 
@@ -723,7 +736,20 @@ Clear the console.
 clearConsole() ~ clear the console ~
 ```
 
-## 2. display
+## 3. cos
+
+Return the cosine function of a number.
+
+```python
+result = cos(pi/2)
+print(result)
+```
+
+```txt
+0
+```
+
+## 4. display
 
 Display a text in the console each certain number of milliseconds, while a condition is true.
 The default condition is `true`.	
@@ -734,17 +760,30 @@ display("Hello world!", 1000, 1 > 0) ~ display the text "Hello world!" for 1 sec
 
 Each 1 second:
 
-```bash
+```txt
 Hello world!
 ```
 
-## 3. e
+## 5. e
 
 The Euler number with 73 digits of precision.
 
 e =  2.7182818284590452353602874713526624977572470936999595749669676277240766303
 
-## 4. get
+## 6. floor
+
+Return the floor function to a number.
+
+```python
+result = floor(pi)
+print(result)
+```
+
+```txt
+3
+```
+
+## 7. get
 
 Get an input, with a tag.
 
@@ -755,18 +794,18 @@ print(input_string)
 
 Input/Output:
 
-```bash
+```txt
 $my-console-application> Hi
 Hi
 ```
 
-## 5. inf
+## 8. inf
 
 The computable infinity used for limits calculation.
 
 inf = 10 ** 11
 
-## 6. itself
+## 9. itself
 
 The identity function.
 
@@ -775,11 +814,38 @@ result = itself(10)
 print(result)
 ```
 
-```bash
+```txt
 10
 ```
 
-## 7. pg
+## 10. ln
+
+Return the natural logarithm function of a number.
+
+```python
+result = ln(1)
+print(result)
+```
+
+```txt
+0
+```
+
+## 11. log
+
+Return the logarithm function of a number, with a certain base.
+You can set an ansatz domain in order to improve the speed of the computation, using the `domain` parameter.
+
+```python
+result = log(e ** 2, e, domain = [1, 4])
+print(result)
+```
+
+```txt
+2
+```
+
+## 12. pg
 
 Print content in white and get an input with a tag. The default tag is 'egg'.
 
@@ -790,19 +856,190 @@ print(input_string)
 
 Input/Output:
 
-```bash
+```txt
 Hello world!
 $my-console-application> Hi
 Hi
 ```
 
-## 8. pi
+## 13. pi
 
 The number pi with 73 digits of precision.
 
 pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062
 
-## 9. ProgressBar
+## 14. Polynomial
+
+The Polynomials class. It allows to use Polynomials and Series.
+
+You can create a Polynomial using the **vector syntax**:
+
+```python
+p = Polynomial([1, 2, 3])
+```
+
+or using the **literal syntax**:
+
+```python
+p = Polynomial("1 +2x +3x^2")
+```
+
+Using the literal syntax, **you can add literal polynomials in the initialisation**:
+
+```python
+p1 = Polynomial("1 +2x +3x^2" + "-4x")
+p2 = Polynomial("1 +2x +3x^2 -4x")
+p1.display()
+p2.display()
+```
+
+```txt
+1 -2x +3x^2
+1 -2x +3x^2
+```
+
+Example of use:
+
+```python
+result = Polynomial("1 2x +x^2")
+print(result)
+
+result_list = list(result)
+print(result_list)
+```
+
+```txt
+1 2x +x^2
+[1, 2, 1]
+```
+
+### Polynomial.degree
+
+Return the degree of a Polynomial.
+
+```python
+poly = Polynomial("1 +3x^4 +x^3")
+deg = poly.degree
+print(deg)
+```
+
+```txt
+4
+```
+
+### Polynomial.display
+
+Display a Polynomial in the console.
+
+```python
+poly = Polynomial([1, 0, 3, 1])
+poly.display()
+```
+
+```txt
+1 +3x^2 +x^3
+```
+
+### Polynomial.eval
+
+Return the evaluation of a Polynomial at a certain point.
+
+```python
+poly = Polynomial("1 -x^2")
+result = poly.eval(7)
+print(result)
+```
+
+```txt
+-48
+```
+
+### Polynomial.power
+
+Return the power of a Polynomial to a certain power.
+
+```python
+poly = Polynomial("1 +x")
+result = poly.power(2)
+result.display()
+```
+
+```txt
+1 +2x +x^2
+```
+
+### Polynomial.plus
+
+Return the sum of two Polynomials.
+
+```python
+poly1 = Polynomial("1 +3x^2 +x^3")
+poly2 = Polynomial("4x +6x^3")
+poly = poly1.plus(poly2)
+poly.display()
+```
+
+```txt
+1 +4x +3x^2 +7x^3
+```
+
+### Polynomial.times
+
+Return the product of two Polynomials.
+
+```python
+poly1 = Polynomial("1 - 3x^2")
+poly2 = Polynomial("5x^3")
+poly = poly1.times(poly2)
+poly.display()
+```
+
+```txt
+5x^3 -15x^5
+```
+
+## 15. Polynomial.var
+
+The variable of a Polynomial.
+
+```python
+poly = Polynomial("1 - 3x^2")
+v = poly.var
+print(v)
+```
+
+```txt
+x
+```
+
+### Polynomial.zeros
+
+Return the zeros of a Polynomial.
+
+```python
+poly = Polynomial("1 - x^2")
+z = poly.zeros
+print(z)
+```
+
+```txt
+[-1, 1]
+```
+
+## 16. pow
+
+Pow a number to a certain power.
+
+```python
+result = pow(2, 3)
+print(result)
+```
+
+```txt
+8
+```
+
+## 17. ProgressBar
 
 A progress bar pip-like for console implementations.
 
@@ -813,7 +1050,7 @@ bar.iterate(printPercent = True)
 
 Last iteration:
 
-```bash
+```txt
 |████████████████████████████████|      100%
 ```
 
@@ -827,7 +1064,7 @@ text = p_bar.bar(0.5, 16)
 print(text)
 ```
 
-```bash
+```txt
 |████████        |      50%
 ```
 
@@ -841,12 +1078,12 @@ p_bar = ProgressBar()
 p_bar.display(0.75, 16, 1000, printPercent = False)
 ```
 
-```bash
+```txt
 |████████████    |
 ```
 
 ### ProgressBar.iterate
-iterate(self, function = clearConsole, printPercent = False):
+
 For each percent of progress, display a progress bar in the console, with length 32 and a sleeping time of 24 milliseconds.
 You can choose a function to execute at each iteration.
 
@@ -863,19 +1100,19 @@ p_bar.iterate(my_function, printPercent = True)
 
 Iteration 25:
 
-```bash
+```txt
 Hello world!
 |████████                        |      25%
 ```
 
 Last iteration:
 
-```bash
+```txt
 Hello world!
 |████████████████████████████████|      100%
 ```
 
-## 10. put
+## 18. put
 
 Print content in a certain eggdriver color. The default color is white. You can set the color to "" to reset the color.
 You can also set an ending string using the `end` parameter.
@@ -884,23 +1121,36 @@ You can also set an ending string using the `end` parameter.
 put("Hi", "", ";")
 ```
 
-```bash
+```txt
 Hi;
 ```
 
-## 11. R
+## 19. R
 
 The Reals numbers set.
 
 R = [-inf, inf]
 
-## 12. series_inf
+## 20. series_inf
 
 The computable infinity used for series calculation.
 
 series_inf = 500
 
-## 13. sleep
+## 21. sin
+
+Return the sine function of a number.
+
+```python
+result = sin(pi/2)
+print(result)
+```
+
+```txt
+1
+```
+
+## 22. sleep
 
 Wait a certain number of milliseconds.
 
@@ -908,12 +1158,51 @@ Wait a certain number of milliseconds.
 sleep(1000) ~ sleep for 1 second ~
 ```
 
-## 14. sysCommand
+## 23. sysCommand
 
 Execute a python command. (Currently only for Windows).
 
 ```python
 sysCommand("-m pip install --upgrade pip") ~ execute the command "py -m pip install --upgrade pip" ~
+```
+
+## 24. tan
+
+Return the tangent function of a number.
+
+```python
+result = tan(pi/4)
+print(result)
+```
+
+```txt
+1
+```
+
+## 25. truncate
+
+Truncate a number to a certain number of digits.
+
+```python
+result = truncate(pi, 5)
+print(result)
+```
+
+```txt
+3.14165
+```
+
+## 26. x
+
+The x variable. Used for Polynomials and Series evaluation.
+
+```python
+result = x(2)
+print(result)
+```
+
+```txt
+2
 ```
 
 # Templates Standard Library

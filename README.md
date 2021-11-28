@@ -715,6 +715,6 @@ Most of Nateve functions, variables and classes are implemented in the **Eggdriv
 
 In this section we will see how to use the Eggdriver Standard Library features.
 
-replace_eggdriver_standard_library_here
+{replace_eggdriver_standard_library_here}
 
 # Templates Standard Library
