@@ -460,7 +460,7 @@ poly.display()
 5x^3 -15x^5
 ```
 
-# Polynomial.var
+## Polynomial.var
 
 The variable of a Polynomial.
 
@@ -486,6 +486,76 @@ print(z)
 
 ```txt
 [-1, 1]
+```
+
+# x_powered
+
+Given the name of a variable, return the variable to the power of certain power.
+
+```python
+result = x_powered(2, "x")
+print(result)
+```
+
+```txt
+x^2
+```
+
+# plusPoly
+
+Return the sum of two Polynomials.
+
+```python
+poly1 = Polynomial("1 +3x^2 +x^3")
+poly2 = Polynomial("4x +6x^3")
+poly = plusPoly(poly1, poly2)
+poly.display()
+```
+
+```txt
+1 +4x +3x^2 +7x^3
+```
+
+# scalePoly
+
+Return the product of a Polynomial by a scalar.
+
+```python
+poly1 = Polynomial("1 +3x^2 +x^3")
+poly = scalePoly(poly1, 5)
+poly.display()
+```
+
+```txt
+5 +15x^2 +5x^3
+```
+
+# times
+
+Return the product of two Polynomials. Please prefer the [Polynomial.times](#Polynomial.times) instead.
+
+```python
+poly1 = Polynomial("1 - 3x^2")
+poly2 = Polynomial("5x^3")
+poly = times(poly1, poly2)
+poly.display()
+```
+
+```txt
+5x^3 -15x^5
+```
+
+# fromZeros
+
+Given an iterable of numbers, return the Polynomial whose zeros are these numbers.
+
+```python
+poly = fromZeros([1, 7])
+poly.display()
+```
+
+```txt
+7 -8x +x^2
 ```
 
 ~ this will not be shown ~
