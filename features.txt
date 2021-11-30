@@ -558,4 +558,30 @@ poly.display()
 7 -8x +x^2
 ```
 
+# solve
+
+Return the solutions of a equation `function(x) == bias`, in a certain domain.
+You can specify the degree of the function, the accurancy of the result, and if you want to see the alerts.
+Specifying the degree allows to avoid unnecessary computations.
+
+```python
+def f {
+    return x**2 - 49
+}
+
+~ solve the equation f(x) == 0 ~
+roots = solve(f, bias = 0, domain = R, accurancy = 16, degree = 2, alerts = false)
+
+print(roots)
+```
+
+```txt
+[-7, 7]
+```
+
+# root
+
+Gives a root of the equation `function(x) == bias`, in a certain domain.
+
+
 ~ this will not be shown ~
